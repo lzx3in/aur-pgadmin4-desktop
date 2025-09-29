@@ -10,7 +10,7 @@ url='https://www.pgadmin.org/'
 depends=("pgadmin4-server" 'xdg-utils' 'python-dbus')
 provides=('pgadmin4-desktop')
 source=(${pkgname}-${pkgver}-x86_64.deb::"https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/plucky/dists/pgadmin4/main/binary-amd64/${pkgname}_${pkgver}_amd64.deb")
-sha256sums=('b801feffb3047b99a183b1f101f3e4a86bad0cb6bdec739237cc8d4186d2a253')
+sha256sums=('658e42be937a0694904ea4f960c906ea50cef8e616b7aceda59b4a6d6460488d')
 
 package() {
   # Extract package data
