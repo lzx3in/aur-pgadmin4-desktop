@@ -7,10 +7,11 @@ RUN pacman -Syu --noconfirm && \
       # Required by makepkg itself
       sudo fakeroot debugedit binutils \
       # Download pgadmin4-server package
-      wget
+      jq wget
 
-RUN wget https://github.com/lzx3in/aur-pgadmin4-server/releases/download/dev/pgadmin4-server-9.8-2-x86_64.pkg.tar.zst && \
-    pacman -U pgadmin4-server-9.8-2-x86_64.pkg.tar.zst --noconfirm
+RUN TARGET_URL=$(curl -s https://api.github.com/repos/lzx3in/aur-pgadmin4-server/releases/tags/dev | jq -r '.assets[0].browser_download_url') && \
+    wget ${TARGET_URL} && \
+    pacman -U $(basename ${TARGET_URL}) --noconfirm
 
 RUN useradd -m -u 1001 -s /bin/zsh builder && \
     echo 'builder ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
