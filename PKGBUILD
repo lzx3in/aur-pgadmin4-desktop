@@ -1,7 +1,7 @@
 # Maintainer: bko <aur at bil dot co dot ua>
 
 pkgname=pgadmin4-desktop
-pkgver=9.10.1
+pkgver=9.10
 _realver=9.10-1.plucky
 pkgrel=1
 pkgdesc='The desktop user interface for pgAdmin. pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.'
